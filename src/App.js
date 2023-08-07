@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'; // Import Navigate
+import Navbar from './Navbar';
+import RegistrationForm from './RegistrationForm';
+import LoginForm from './LoginForm';
+import Dashboard from './Dashboard';
+import protectedRoute from './protectedRoute';
+import AuthService from './AuthService';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+
+
 
 function App() {
+  const [authenticated, setAuthenticated] = useState(false);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+  <Route path="/register" element={<RegistrationForm />} />
+  <Route path="/login" element={<LoginForm setAuthenticated={setAuthenticated} />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+</Routes>
+    </Router>
   );
 }
 

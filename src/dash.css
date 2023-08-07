@@ -1,0 +1,37 @@
+.dashboard-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .resource-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .resource-list {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .resource-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .resource-item h3 {
+    margin: 0;
+  }
+  
+  .resource-item p {
+    margin: 5px 0;
+  }
+  
+  .resource-item button {
+    margin-right: 5px;
+  }
+  
+  /* Add more styles as needed */
+  
