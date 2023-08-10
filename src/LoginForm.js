@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // Import Link
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +17,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/login', formData);
+      const response = await axios.post('http://3.89.74.19/api/auth/login', formData);
       console.log('Login successful');
       if (response.data.token) {
         localStorage.setItem('token', response.data.token); // Store the token in localStorage
@@ -56,6 +56,12 @@ const LoginForm = () => {
           Login
         </button>
       </form>
+      <p className="mt-3">
+        Don't have an account?{' '}
+        <Link to="/register" className="btn btn-link">
+          Register here
+        </Link>
+      </p>
     </div>
   );
 };

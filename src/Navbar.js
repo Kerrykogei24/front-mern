@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <div className='container'>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link className="navbar-brand" to="/login">
+        <Link className="navbar-brand" to="/">
           MERN APP
         </Link>
         <button
@@ -35,6 +37,9 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+  
+  </div>
+
   );
 };
 
