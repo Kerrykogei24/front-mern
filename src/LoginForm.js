@@ -17,7 +17,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://3.89.74.19/api/auth/login', formData);
+      const response = await axios.post('https://3.89.74.19/api/auth/login', formData);
       console.log('Login successful');
       if (response.data.token) {
         localStorage.setItem('token', response.data.token); // Store the token in localStorage

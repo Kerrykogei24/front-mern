@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   const fetchResources = async () => {
     try {
-      const response = await axios.get('http://3.89.74.19/api/crud/resources', {
+      const response = await axios.get('https://3.89.74.19/api/crud/resources', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -36,7 +36,7 @@ const Dashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://3.89.74.19/api/crud/resources', formData, {
+      await axios.post('https://3.89.74.19/api/crud/resources', formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -50,7 +50,7 @@ const Dashboard = () => {
 
   const handleDelete = async (resourceId) => {
     try {
-      await axios.delete(`http://3.89.74.19/api/crud/resources/${resourceId}`, {
+      await axios.delete(`https://3.89.74.19/api/crud/resources/${resourceId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -77,7 +77,7 @@ const Dashboard = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `http://3.89.74.19/api/crud/resources/${resourceId}`,
+        `https://3.89.74.19/api/crud/resources/${resourceId}`,
         editingResource,
         {
           headers: {
